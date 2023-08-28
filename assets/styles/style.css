@@ -1,36 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --text: #05070b;
+    --background: #f1f4f9;
+    --primary: #294161;
+    --secondary: #d4dfed;
+    --accent: #4874ad;
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
 }
 
 body {
-    background-color: #ccd6e2;
-    height: 100vh;
+    background-color: var(--background);
 }
 
 h1 {
     text-align: center;
-    background-color: #800000;
+    font-size: 1.8rem;
     color: #fff;
+    background-color: var(--primary);
     width: 100%;
+    padding: 1rem;
 }
+
 
 /* Formulario */
 
 .cuerpo-formulario {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
     width: 800px;
-    margin: auto;
+    margin: 30px auto;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
 }
 
 .contenedor-formulario {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1rem 1.8rem;
     width: 100%;
 }
 
@@ -40,6 +50,26 @@ form div{
     margin-bottom: 20px;
 }
 
+form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+form input {
+    height: 40px;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 80px;
+    max-height: 250px;
+    padding: 10px;
+}
+
+/* Botones */
+
 .contenedor-botones {
     display: flex;
     flex-direction: row;
@@ -47,21 +77,19 @@ form div{
     margin-bottom: 20px;
 }
 
-button[type="submit"]{
+form button {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: none;
+}
+
+button[type="submit"] {
     width: 70%;
+    background-color: var(--accent);
+    color: #fff;
 }
 
-button[type="reset"]{
+button[type="reset"] {
     width: 30%;
+    background-color: var(--secondary);
 }
-
-textarea {
-    width: 100%;
-    resize: vertical;
-    min-height: 100px;
-    max-height: 300px;
-
-
-}
-
-
