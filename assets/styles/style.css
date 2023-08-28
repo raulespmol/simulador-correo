@@ -24,7 +24,7 @@ h1 {
     text-align: center;
     font-size: 1.8rem;
     color: #fff;
-    background-color: var(--primary);
+    background-color: var(--accent);
     width: 100%;
     padding: 1rem;
 }
@@ -44,7 +44,7 @@ h1 {
     width: 100%;
 }
 
-form div{
+.contenedor-correo, .contenedor-asunto{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -55,17 +55,24 @@ form label {
     margin-bottom: 5px;
 }
 
+form input, form textarea {
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
 form input {
     height: 40px;
     padding: 10px;
 }
 
-textarea {
+form textarea {
     width: 100%;
     resize: vertical;
-    min-height: 80px;
+    min-height: 150px;
     max-height: 250px;
     padding: 10px;
+    border-bottom-right-radius: 0;
 }
 
 /* Botones */
@@ -73,23 +80,50 @@ textarea {
 .contenedor-botones {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-form button {
+button {
     padding: 10px;
     font-size: 1.1rem;
     border: none;
+    color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 button[type="submit"] {
+    color: #fff;
     width: 70%;
     background-color: var(--accent);
-    color: #fff;
 }
 
 button[type="reset"] {
     width: 30%;
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
+
+i {
+    color: #fff
+}
+
+/* Dinamico */
+
+.hidden {
+    display: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+
+
