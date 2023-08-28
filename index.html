@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Simulador de Correo</title>
 </head>
 <body>
-    
+    <section class="cuerpo-formulario">
+        <h1>Simulador de Envío de correos</h1>
+        <div class="contenedor-formulario">
+            <form>
+                <div class="contenedor-correo">
+                    <label for="email">Destino:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                </div>
+                <div class="contenedor-asunto">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Asunto">
+                </div>
+                <div class="contenedor-mensaje">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea type="text" id="mensaje" name="mensaje" placeholder="Escribe aquí tu mensaje"></textarea>
+                </div>
+                <section class="contenedor-botones">
+                    <button type="submit">
+                        Enviar
+                    </button>
+                    <button type="reset">
+                        Vaciar
+                    </button>
+                </section>
+            </form>
+        </div>
+    </section>
+
+<script src="./assets/script/app.js"></script>
 </body>
 </html>
