@@ -6,6 +6,8 @@
     --primary: #294161;
     --secondary: #d4dfed;
     --accent: #4874ad;
+    --error: #960020;
+    --success: #158d65;
   }
 
 * {
@@ -58,12 +60,17 @@ form label {
 form input, form textarea {
     border: 1px solid var(--secondary);
     border-radius: 10px;
-    margin: 5px 0;
+    margin-bottom: 1rem;
+    padding: 10px;
 }
+
+/* input:focus-visible, textarea:focus-visible {
+    border: 2px solid red;
+}
+ */
 
 form input {
     height: 40px;
-    padding: 10px;
 }
 
 form textarea {
@@ -71,7 +78,6 @@ form textarea {
     resize: vertical;
     min-height: 150px;
     max-height: 250px;
-    padding: 10px;
     border-bottom-right-radius: 0;
 }
 
@@ -125,5 +131,18 @@ i {
     display: flex;
 }
 
+.msg-error {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--error);
+    color: #fff;
+}
+
+.msg-exito {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--success);
+    color: #fff;
+}
 
 
