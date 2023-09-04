@@ -14,17 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function validar(e) {
-        if(e.target.value === ''){
-            alertaError(e.target, e.target.parentElement);
-        } 
+        if(e.target.value.trim() === ''){
+            alertaError(`El campo "${e.target.id}" es obligatorio`, e.target.parentElement);
+            return
+        }
+        limpiarError(e.target.parentElement);
     }
 
-    function alertaError(input, campo) {
+    function alertaError(mensaje, campo) {
+        limpiarError(campo);
+
         const mensajeError = document.createElement('p');
         mensajeError.classList = 'msg-error';
-        mensajeError.textContent = `El campo "${input.id}" es obligatorio`;
+        mensajeError.textContent = mensaje;
         
         campo.appendChild(mensajeError);
+    }
+
+    function limpiarError(campo) {
+        const alerta = campo.querySelector('.msg-error');
+        if(alerta){
+            alerta.remove();
+        }
     }
 
 })

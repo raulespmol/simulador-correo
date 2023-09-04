@@ -133,7 +133,7 @@ i {
 
 .msg-error {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     background-color: var(--error);
     color: #fff;
 }
