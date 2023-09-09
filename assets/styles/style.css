@@ -87,7 +87,7 @@ form textarea {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 button {

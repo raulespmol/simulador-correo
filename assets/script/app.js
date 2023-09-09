@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
             alertaError(`El campo "${e.target.id}" es obligatorio`, e.target.parentElement);
             return
         }
+        if(e.target.id === 'destino' && !validarFormatoEmail(e.target.value)){
+            alertaError(`El email no es válido`, e.target.parentElement);
+            return;
+        }
+        
         limpiarError(e.target.parentElement);
     }
 
@@ -38,4 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function validarFormatoEmail(email) {
+        const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
+        const resultado = regex.test(email);
+        return resultado;
+    }
 })
