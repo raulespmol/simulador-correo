@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnEnviar = document.querySelector('#enviar');
     const btnReset = document.querySelector('#reset');
 
+    const correo = {
+        destino: '',
+        asunto: '',
+        mensaje: ''
+
+    } ;
+
     inputDestino.addEventListener('blur', validar);
     inputAsunto.addEventListener('blur', validar);
     inputMensaje.addEventListener('blur', validar);
