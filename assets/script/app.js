@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         destino: '',
         asunto: '',
         mensaje: ''
-
     } ;
 
     inputDestino.addEventListener('blur', validar);
@@ -23,13 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function validar(e) {
         if(e.target.value.trim() === ''){
             alertaError(`El campo "${e.target.id}" es obligatorio`, e.target.parentElement);
+            correo[e.target.id] = '';
+            console.table(correo);
             return
         }
         if(e.target.id === 'destino' && !validarFormatoEmail(e.target.value)){
             alertaError(`El email no es válido`, e.target.parentElement);
+            correo[e.target.id] = '';
+            console.table(correo);
             return;
         }
         
+        correo[e.target.id] = e.target.value.trim().toLowerCase();
+        console.table(correo);
         limpiarError(e.target.parentElement);
     }
 
