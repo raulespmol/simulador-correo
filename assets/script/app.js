@@ -23,18 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if(e.target.value.trim() === ''){
             alertaError(`El campo "${e.target.id}" es obligatorio`, e.target.parentElement);
             correo[e.target.id] = '';
-            console.table(correo);
+            validarCorreo();
             return
         }
         if(e.target.id === 'destino' && !validarFormatoEmail(e.target.value)){
             alertaError(`El email no es válido`, e.target.parentElement);
             correo[e.target.id] = '';
-            console.table(correo);
+            validarCorreo();
             return;
         }
         
         correo[e.target.id] = e.target.value.trim().toLowerCase();
         console.table(correo);
+        validarCorreo();
         limpiarError(e.target.parentElement);
     }
 
@@ -59,5 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
         const resultado = regex.test(email);
         return resultado;
+    }
+
+    function validarCorreo() {
+        if(Object.values(correo).includes('')){
+            btnEnviar.disabled = true;
+            return;
+        } 
+        btnEnviar.disabled = false;
+        console.log('correo completo!')
     }
 })
