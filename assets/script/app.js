@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
     const formulario = document.querySelector('#formulario');
     const inputDestino = document.querySelector('#destino');
     const inputAsunto = document.querySelector('#asunto');
     const inputMensaje = document.querySelector('#mensaje');
-    const btnEnviar = document.querySelector('#enviar');
-    const btnReset = document.querySelector('#reset');
+    const btnEnviar = document.querySelector('#formulario button[type="submit"]');
+    const btnReset = document.querySelector('#formulario button[type="reset"]');
 
     const correo = {
         destino: '',
@@ -17,7 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     inputAsunto.addEventListener('blur', validar);
     inputMensaje.addEventListener('blur', validar);
 
-
+    btnReset.addEventListener('click', () => {
+        correo.destino = '';
+        correo.asunto = '';
+        correo.mensaje = '';
+        
+        btnEnviar.disabled = true;
+    })
 
     function validar(e) {
         if(e.target.value.trim() === ''){
@@ -68,6 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         } 
         btnEnviar.disabled = false;
-        console.log('correo completo!')
     }
 })
