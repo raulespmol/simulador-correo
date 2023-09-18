@@ -35,7 +35,8 @@ h1 {
 /* Formulario */
 
 .cuerpo-formulario {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: 30px auto;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
 }
