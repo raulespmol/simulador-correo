@@ -124,11 +124,15 @@ i {
 /* Dinamico */
 
 .hidden {
-    display: hidden;
+    display: none;
 }
 
 .flex {
     display: flex;
+}
+
+.visible {
+    display: block;
 }
 
 .msg-error {

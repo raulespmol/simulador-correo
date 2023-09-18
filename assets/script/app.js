@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputMensaje = document.querySelector('#mensaje');
     const btnEnviar = document.querySelector('#formulario button[type="submit"]');
     const btnReset = document.querySelector('#formulario button[type="reset"]');
+    const spinner = document.querySelector('.spinner')
 
     const correo = {
         destino: '',
@@ -82,9 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function enviarCorreo(e) {
         e.preventDefault();
-    
-        console.log('correo enviado!')
-        formulario.reset();
+        
+        spinner.classList.remove('hidden');
+        spinner.classList.add('visible');
+
+        setTimeout(() => {
+            spinner.classList.remove('visible');
+            spinner.classList.add('hidden');
+            resetearFormulario()
+        }, 3000);
     }
 })
 
