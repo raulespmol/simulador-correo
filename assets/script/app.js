@@ -90,8 +90,19 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             spinner.classList.remove('visible');
             spinner.classList.add('hidden');
-            resetearFormulario()
-        }, 3000);
+            resetearFormulario();
+
+            const mensajeExito = document.createElement('p');
+            mensajeExito.classList = 'msg-exito';
+            mensajeExito.textContent = 'Enviado exitosamente';
+    
+            formulario.appendChild(mensajeExito);
+
+            setTimeout(() => {
+                mensajeExito.remove()
+            }, 3000);
+        }, 2500);
+
     }
 })
 
