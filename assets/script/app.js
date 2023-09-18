@@ -16,14 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
     inputDestino.addEventListener('blur', validar);
     inputAsunto.addEventListener('blur', validar);
     inputMensaje.addEventListener('blur', validar);
+    btnReset.addEventListener('click', resetearFormulario);
+    formulario.addEventListener('submit', enviarCorreo);
 
-    btnReset.addEventListener('click', () => {
-        correo.destino = '';
-        correo.asunto = '';
-        correo.mensaje = '';
-        
-        btnEnviar.disabled = true;
-    })
 
     function validar(e) {
         if(e.target.value.trim() === ''){
@@ -75,4 +70,21 @@ document.addEventListener('DOMContentLoaded', function () {
         } 
         btnEnviar.disabled = false;
     }
+
+    function resetearFormulario(){
+        correo.destino = '';
+        correo.asunto = '';
+        correo.mensaje = '';
+        
+        formulario.reset();
+        btnEnviar.disabled = true;
+    }
+
+    function enviarCorreo(e) {
+        e.preventDefault();
+    
+        console.log('correo enviado!')
+        formulario.reset();
+    }
 })
+
