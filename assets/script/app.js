@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     inputDestino.addEventListener('blur', validar);
     inputAsunto.addEventListener('blur', validar);
     inputMensaje.addEventListener('blur', validar);
-    btnReset.addEventListener('click', resetearFormulario);
     formulario.addEventListener('submit', enviarCorreo);
+    btnReset.addEventListener('click', resetearFormulario);
 
 
     function validar(e) {
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
         correo.mensaje = '';
         
         formulario.reset();
-        btnEnviar.disabled = true;
-    }
+        validarCorreo()
+}
 
     function enviarCorreo(e) {
         e.preventDefault();
